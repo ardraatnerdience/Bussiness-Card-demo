@@ -1,0 +1,53 @@
+.sidebar {
+  position: fixed;
+  top: 51px; /* adjust for navbar */
+  left: 0;
+  width: 200px;
+  height: calc(100vh - 60px);
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2px 0 10px #007aff1a;
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+}
+
+.sidebar-bottom {
+  padding: 15px;
+}
+
+button {
+  width: 109%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+button img {
+  width: 132px;
+}
+
+/* Hover */
+button:hover img {
+  filter: invert(32%) sepia(98%) saturate(3000%) hue-rotate(210deg);
+}
+
+/* Active */
+button.active {
+  background: #eef2ff;
+}
+
+button.active img {
+  filter: invert(32%) sepia(98%) saturate(3000%) hue-rotate(210deg);
+}

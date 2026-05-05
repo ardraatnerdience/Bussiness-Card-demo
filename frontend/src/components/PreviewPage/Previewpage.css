@@ -1,0 +1,77 @@
+.preview-page {
+  padding: 40px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 🔥 4 cards per row */
+  gap: 20px;
+}
+
+.card-item {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card-top {
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.actions button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.main {
+  margin-left: 300px;   /* sidebar width */
+  margin-top: 80px;     /* navbar height */
+  padding: 30px;
+}
+.small-card {
+  height: 532px;
+  width: 251px;
+}
+
+.small-card .card-top {
+  height: 90px;
+}
+
+.small-card .card-avatar {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+}
+
+.small-card h2 {
+  font-size: 16px;
+}
+
+.small-card p {
+  font-size: 12px;
+}
+
+.small-card .info-row {
+  font-size: 12px;
+  gap: 6px;
+}
+
+
+.small-card .save {
+  padding: 8px;
+  font-size: 12px;
+}

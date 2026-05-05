@@ -1,0 +1,418 @@
+* {
+  transform-origin: top left;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: #F2F2F2;
+}
+h1, h2 , h3 {
+  font-family: 'Manrope', sans-serif;
+}
+
+/* MAIN LAYOUT */
+.main {
+  margin-left: 200px;
+  display: flex;
+  padding: 40px;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+/* LEFT FORM */
+.form {
+  width: 50%;
+}
+
+.form h1 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  font-family: 'Manrope', sans-serif;
+}
+
+/* PROFILE ROW */
+.profile-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatar {
+  width: 97px;
+  height: 100px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upload-text {
+  font-size: 30px;
+  color: #6b7280;
+}
+
+/* INPUTS */
+input {
+  width: 50%;
+  padding: 14px 18px;
+  border-radius: 30px;
+  border: none;
+  background: #D5D9DD;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.bio input {
+  height: 50px;
+}
+.bioinput{
+
+width: 95%;
+height: 127px;
+
+
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* BUTTONS */
+.buttons{
+  display: flex;
+  
+  margin-top: 40px;
+}
+.primary {
+  justify-content: center;
+  background: #2563eb;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 25px;
+  font-weight: 500;
+  width: 167px;
+}
+
+.secondary {
+  justify-content: center;
+  width: 167px;
+  
+  margin-left: 10px;
+  color: #6b7280;
+}
+
+/* RIGHT SIDE */
+.preview {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔥 BACKGROUND PANEL */
+.preview-bg {
+  position: fixed;
+  width: 396px;
+  height: 607px;
+  background: #D5D9DD;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* soft depth */
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.05);
+}
+
+/* CARD */
+.card {
+  /* top:50px; */
+  position: relative;
+  height: 541px;
+  /* width: 380px; */
+  /* border-radius: 20px; */
+  overflow-x: hidden;
+  scrollbar-width: none;
+  background: white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.card {
+  width: 300px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+.preview-bg {
+  top: 90px;
+  background: D5D9DD;
+  backdrop-filter: blur(20px);
+  position: fixed;
+}
+
+/* TOP IMAGE AREA */
+.card-top {
+  height: 120px;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+  background-size: cover;
+  background-position: center;
+}
+
+/* CONTENT */
+.card-content {
+  padding: 25px;
+  text-align: center;
+  position: relative;
+}
+
+/* FLOAT AVATAR */
+.card-avatar {
+  position: absolute;
+  top: -45px;
+
+  /* PERFECT CENTER (export-safe) */
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid white;
+
+  /* 🔥 IMPORTANT */
+  box-sizing: border-box;
+}
+
+.card-avatar img {
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* TEXT */
+.card p,
+.card h2,
+.info span {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card h2 {
+  margin-top: 23px;
+  margin-bottom: 3px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card p {
+  color: #6b7280;
+  margin: 3px 0;
+}
+
+.org {
+  font-size: 13px;
+}
+
+/* CONTACT INFO */
+.info {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.info p {
+  font-size: 14px;
+}
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;   /* 🔥 remove underline */
+  color: #374151;
+}
+
+.info-row:hover {
+  color: #2563eb;
+}
+
+/* SAVE BUTTON */
+.save {
+  justify-content: center;
+  margin-top: 20px;
+  padding: 12px;
+  width: 100%;
+  border-radius: 7px;
+  background: linear-gradient( #D9ECF2, #9CC1D3);
+  color: black;
+  font-weight: 500;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;        /* IMPORTANT: fixed height */
+  z-index: 1000;       /* stays above everything */
+  background: white;
+  box-shadow: 0 2px 10px #007aff1a;
+  padding-top: 10px;
+}
+.info {
+  margin-top: 20px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  height: 34px;
+}
+
+.info-row svg {
+  background: #e0f2fe;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 30px;
+  color: #0284c7;
+}
+
+.info-row svg {
+  color: #3b82f6;
+}
+.bg-upload {
+  width: 100%;
+  height: 120px;
+  border-radius: 15px;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.bg-upload img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.bg-upload span {
+  color: #6b7280;
+}
+
+.card-top{
+  object-fit:cover
+}
+
+.bio {
+  font-size: 14px;
+  color: #4b5563;
+  margin-top: 8px;
+}
+
+.input-icon{
+position: relative;
+left: 64px;
+bottom: 7px;
+
+}
+
+.contact-channels input{
+  width:100%;
+  height: 30px;
+  text-align: center;
+}
+
+
+
+.qr-section {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.pdf-card {
+  width: 400px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.pdf-top {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+}
+
+.pdf-avatar {
+  margin-top: -50px;
+  display: flex;
+  justify-content: center;
+}
+
+.pdf-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+}
+
+.pdf-content {
+  padding: 25px;
+  text-align: center;
+}
+
+/* ===== EXPORT MODE FIX ===== */
+
+.export-mode .card-avatar {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.export-mode img {
+  display: block;
+}
+
+.export-mode svg {
+  display: block;
+}
+
+.export-mode .card {
+  transform: scale(1);
+}
+
+/* QR section (you already added, keep it) */
+.qr-section {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}

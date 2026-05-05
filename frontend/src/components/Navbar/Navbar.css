@@ -1,0 +1,23 @@
+.navbar-left img{
+width: 176.06px;
+height:49.77px;
+}
+.navbar-right{
+    margin-right:15px;
+    margin-top: 7px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    margin: -7px -7px 0px -7px ;
+    height: 50px;
+     box-shadow: 2px 0 10px #007AFF1A;
+}
+.profile{
+ margin-left: 20px;
+}
+.setting{
+    margin-left: 20px;
+}
