@@ -2,53 +2,128 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Admin/Sidebar";
-import CardPreview from "../CardPreview/Cardpreview";
+import CardPreview from "../CardPreview/CardPreview";
+import "./AdminManageCard.css";
+import ManageEdit from '../../assets/ManageEdit.svg'
+import ManageExport from '../../assets/ManageExport.svg'
+import ManageCopy from '../../assets/ManageCopy.svg'
+import { useRef } from "react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
-const AdminManageCard = () => {
+const ManageCard = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const cards = JSON.parse(localStorage.getItem("cards")) || [];
-  const card = cards.find(c => c.id.toString() === id);
+const cardRef = useRef();
 
-  if (!card) return <h2>Card not found</h2>;
+  const cards = JSON.parse(localStorage.getItem("cards")) || [];
+  const card = cards.find((c) => String(c.id) === id);
+
+  if (!card) return <h2 style={{ marginLeft: "200px", marginTop: "100px" }}>Card not found</h2>;
 
   const handleDelete = () => {
-    const updated = cards.filter(c => c.id.toString() !== id);
+    const updated = cards.filter((c) => String(c.id) !== id);
     localStorage.setItem("cards", JSON.stringify(updated));
-    navigate("/admin/cards");
+    navigate("/preview");
   };
+
+
+
+const handleDownloadPDF = async () => {
+  const element = document.getElementById("pdfCard");
+
+  const canvas = await html2canvas(element, {
+    scale:3,
+    useCORS: true,
+    backgroundColor: "#ffffff"
+  });
+
+  const imgData = canvas.toDataURL("image/png");
+
+ 
+  const padding = 80;
+
+  const pdfWidth = canvas.width + padding;
+  const pdfHeight = canvas.height + padding;
+
+  const pdf = new jsPDF({
+    orientation: "portrait",
+    unit: "px",
+    format: [pdfWidth, pdfHeight]
+  });
+
+  const x = padding / 2;
+  const y = padding / 2;
+
+  pdf.addImage(imgData, "PNG", x, y, canvas.width, canvas.height);
+
+  pdf.save(`${card.name || "card"}.pdf`);
+};
+
+  const handleCopy = () => {
+  const link = `${window.location.origin}/card/${card.id}`;
+  navigator.clipboard.writeText(link);
+  alert("Link copied!");
+};
+
+
 
   return (
     <div>
       <Navbar />
-      <Sidebar />
+      <Sidebar active="preview" />
 
-      <div className="main">
+      <div className="manage-wrapper">
 
-        {/* CARD */}
-        <CardPreview data={card} />
+        {/* LEFT SIDE */}
+        <div className="manage-left">
+          <div className="manage-preview-bg">
+             <div ref={cardRef}>
+            <CardPreview data={card} />
+             </div>
+          </div>
+        </div>
 
-        {/* ACTIONS */}
-        <div className="admin-actions">
+        {/* RIGHT SIDE */}
+        <div className="manage-right">
+          <h1>Manage Card</h1>
+          <p>
+            Your digital presence is synced across all platforms.
+            Update your details or share your profile instantly.
+          </p>
 
-          <button onClick={() => navigate(`/edit/${card.id}`)}>
-            Edit
-          </button>
+          <div
+            className="action-card"
+            onClick={() => navigate(`/edit/${id}`)}
+          >
+            <div className="icon-circle"><img src={ManageEdit}/></div>
+            Edit Details
+          </div>
 
-          <button onClick={handleDelete}>
+          <div className="action-card" onClick={handleCopy}>
+            <div className="icon-circle" ><img src={ManageCopy}/></div>
+            Copy Link
+          </div>
+
+          <div className="action-card" onClick={handleDownloadPDF}>
+            <div className="icon-circle"><img src={ManageExport}/></div>
+            Export
+          </div>
+
+          <div className="action-card delete" onClick={handleDelete}>
+            <div className="icon-circle">🗑️</div>
             Delete
-          </button>
-
-          <button onClick={() => window.print()}>
-            Download
-          </button>
+          </div>
 
         </div>
 
       </div>
+     <div id="pdfCard" style={{ position: "absolute", left: "-9999px" }}>
+  <CardPreview data={card} isExport={true} />
+</div>
     </div>
   );
 };
 
-export default AdminManageCard;
+export default ManageCard;

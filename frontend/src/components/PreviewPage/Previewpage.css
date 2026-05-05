@@ -75,3 +75,7 @@
   padding: 8px;
   font-size: 12px;
 }
+
+.small-card:hover {
+  transform: translateY(-5px);
+}

@@ -25,7 +25,7 @@ function App ()  {
          <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/cards" element={<AdminCards />} />
         <Route path="/admin/manage/:id" element={<AdminManageCard />} />
-<Route path="/card/:id" element={<PublicCard />} />
+        <Route path="/card/:id" element={<PublicCard />} />
       </Routes>
     </Router>
   )

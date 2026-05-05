@@ -1,0 +1,96 @@
+/* MAIN LAYOUT */
+.manage-wrapper {
+  margin-left: 98px;
+  margin-top: 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 60px;
+}
+
+/* LEFT SIDE */
+.manage-left {
+    position: relative;
+    top:8px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+/* BACKGROUND PANEL (like screenshot) */
+.manage-preview-bg {
+  width: 420px;
+  height: 620px;
+  background: #d5d9dd;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+/* RIGHT SIDE */
+.manage-right {
+    position: relative;
+    right:89px;
+  width: 35%;
+}
+
+.manage-right h1 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.manage-right p {
+  color: #6b7280;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* ACTION CARDS */
+.action-card {
+    height: 61px;
+    width: 306px;
+  background: #f3f4f6;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+ margin-left: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  color: #374151;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.action-card:hover {
+  background: #e5e7eb;
+}
+
+/* ICON CIRCLE */
+.icon-circle {
+  width: 45px;
+  height: 45px;
+  background: #e0ecff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+
+
+
+.card{
+    position: relative;
+}

@@ -9,17 +9,17 @@ const Cardpreview = ({ data,small ,onClick, className = "" , isExport}) => {
 
 const qrValue = `${window.location.origin}/card/${data?.id || ""}`;
 
-   const handleSaveContact = () => {
+const handleSaveContact = () => {
   const vCardData = `
 BEGIN:VCARD
 VERSION:3.0
-FN:${data.name}
-ORG:${data.org}
-TITLE:${data.title}
-TEL:${data.phone}
-EMAIL:${data.email}
-URL:${data.website}
-ADR:${data.location}
+FN:${data?.name || ""}
+ORG:${data?.org || ""}
+TITLE:${data?.title || ""}
+TEL:${data?.phone || ""}
+EMAIL:${data?.email || ""}
+URL:${data?.website || ""}
+ADR:${data?.location || ""}
 END:VCARD
   `;
 
@@ -28,8 +28,10 @@ END:VCARD
 
   const a = document.createElement("a");
   a.href = url;
-  a.download = `${formData.name || "contact"}.vcf`;
+  a.download = `${data?.name || "contact"}.vcf`;
   a.click();
+
+  URL.revokeObjectURL(url);
 };
 
 
